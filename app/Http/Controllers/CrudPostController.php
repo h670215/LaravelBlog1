@@ -24,7 +24,7 @@ class CrudPostController extends Controller
      *
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
-    public function add() /*Ez itt jelenleg nincs route-olva, mert a PostingController van helyette*/
+    public function add() /*create volt eredetileg*/
     {
         return view('posting');
     }
@@ -38,7 +38,7 @@ class CrudPostController extends Controller
     public function store(Request $request){
         request()->validate([
             'user'=>'required|max:30|min:4',
-            'post'=>'required|max:400',
+            'post'=>'required|max:1000',
             'tag'=>'required|max:20'
         ]);
 
@@ -63,11 +63,12 @@ class CrudPostController extends Controller
      * Display the specified resource.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
-    /*public function show(Product $product)
-    {
-        return view('products.show', compact('product'));
+
+     /*public function show($post){ //még nincs megírva
+
+        return view('crud.show', compact('post'));
     }*/
 
     /**
@@ -89,14 +90,20 @@ class CrudPostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function update(Request $request, $post)
+    public function update(Request $request, $id)
     {
-        $post->id = $request->input('id');
-        $post->user = $request->input('user');
-        $post->post = $request->input('post');
-        $post->tag = $request->input('tag');
+        request()->validate([
+            'user'=>'required|max:30|min:4',
+            'post'=>'required|max:1000',
+            'tag'=>'required|max:20'
+        ]);
+        $posts = post::all();
+        $post = $posts->find($id);
+        $post->user = $request->get('user'); //eredetileg get helyett input volt
+        $post->post = $request->get('post');
+        $post->tag = $request->get('tag');
 
-        $post->update();
+        //$post->update();
         return redirect()->back()->with('success', 'Post updated successfully');
     }
 
