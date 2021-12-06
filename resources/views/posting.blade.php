@@ -5,7 +5,7 @@
 
 <head>
     <title>My first laravel blog</title>
-    <!--<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.1/css/bootstrap-grid.min.css" rel="stylesheet">-->
+    <link href="bulma/css/bulma.css" rel="stylesheet">
 </head>
 <body>
 
