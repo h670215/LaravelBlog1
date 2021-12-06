@@ -4,7 +4,7 @@
     <div class="row" style="margin-bottom: 20px;">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
-                <h3>Show Product</h3>
+                <h3>Show</h3>
             </div>
         </div>
     </div>
@@ -12,20 +12,20 @@
     <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Name:</strong>
-                {{ $product->name }}
+                <strong>Felhasználó:</strong>
+                {{ $posts->user }}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Price:</strong>
-                {{ $product->price }}
+                <strong>P:</strong>
+                {{ $posts->post }}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Details:</strong>
-                {{ $product->detail }}
+                {{ $posts->tag }}
             </div>
         </div>
     </div>

@@ -5,11 +5,12 @@
 
 <head>
     <title>My first laravel blog</title>
-    <link href="bulma/css/bulma.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+
 </head>
 <body>
 
-
+<a href="../">Vissza</a>
 <section class="post-form">
     <h2>Blogbejegyzés írása</h2>
     <form id="post-form" method="post" action="/posting" >

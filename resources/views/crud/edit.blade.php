@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <title>My first laravel blog</title>
 
-<link rel="stylesheet" href="../css/app.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+<link rel="stylesheet" href="resources/css/app.css">
 
 
 
 <body>
-
+<a href="../">Vissza</a>
 <section class="post-form">
     <h2>Blogbejegyzés szerkesztése(crud)</h2>
     <form method="post" action="{{url('crud/'.$post->id)}}" accept-charset="utf-8">

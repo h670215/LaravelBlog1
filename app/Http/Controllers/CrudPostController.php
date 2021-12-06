@@ -19,6 +19,17 @@ class CrudPostController extends Controller
         return view('posts', ['data'=>$data]);
     }
 
+    function tagindex(){
+        $listedtag = DB::table('tags')->get();
+        return view('crud.listing', ['listedtag'=>$listedtag]);
+    }
+
+    function listindex(){
+
+        $listedpost = DB::table('posts')->where('tag', '$tag');
+        return view('crud.listing', ['listedpost'=>$listedpost]);
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -48,8 +59,12 @@ class CrudPostController extends Controller
                 'post'=>$request->input('post'),
                 'tag' =>$request->input('tag')
             ]);
+        $query2 =
+            DB::table('tags')->insert([
+                'tag'=>$request->input('tag')
+            ]);
 
-        if($query){
+        if($query && $query2){
             return redirect()->back();
         } else{
             return redirect()->back()->with('fail', 'fail') ;

@@ -25,7 +25,7 @@ Route::post('posting', [CrudPostController::class, 'store']);
 Route::resource('posts', 'CrudPostController');
 
 Route::get('crudpost', [CrudPostController::class, 'crudindex'] );
+Route::get('crud/listing', [CrudPostController::class, 'listindex']);
+Route::get('crud/listing', [CrudPostController::class, 'tagindex']);
+Route::get('crud/show', [CrudPostController::class, 'show']);
 
-
-//Route::get('find', [PostController::class, '']);
-//App\Models\post::store()
