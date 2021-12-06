@@ -12,7 +12,6 @@ class post extends Model
     public $timestamps = false;
 
     protected $fillable = [
-        'id',
         'user',
         'post',
         'tag'

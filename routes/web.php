@@ -2,7 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostingController;
-use App\Http\Controllers\PostController;
 use App\Http\Controllers\CrudPostController;
 
 /*
@@ -20,9 +19,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('allposts', [PostController::class, 'index']);
+Route::get('allposts', [CrudPostController::class, 'index']);
 Route::get('posting', [PostingController::class, 'add']);
 Route::post('posting', [PostingController::class, 'store']);
+
+Route::resource('posts', 'CrudPostController');
 
 Route::get('crudpost', [CrudPostController::class, 'crudindex'] );
 

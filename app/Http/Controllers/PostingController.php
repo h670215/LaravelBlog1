@@ -29,7 +29,7 @@ class PostingController extends Controller{
             ]);
 
         if($query){
-            return redirect()->back()->with('success', 'success!');
+            return redirect()->back();
         } else{
             return redirect()->back()->with('fail', 'fail') ;
         }
