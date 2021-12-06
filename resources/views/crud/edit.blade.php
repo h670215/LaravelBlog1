@@ -6,26 +6,9 @@
 
 
 <body>
-<h1>Blogbejegyzések szerkesztése(crud)</h1>
 
-<!--
-@foreach($data as $post)
-    <table>
-        <tr>
-            <td>{{$post->id}}.</td>
-            <td>{{$post->user}}</td>
-        </tr>
-    </table>
-    <p>{{$post->post}}</p>
-    <h6>Címkék: {{$post->tag}}</h6>
-    <a href="{{url('crud/show')}}" class="button">Megtekintés</a>
-    <a href="{{url('crud/'.$post->id.'/edit')}}" class="button">Szerkesztés</a>
-    <a href="{{url('crud/delete')}}" class="button">Törlés</a>
-
-@endforeach
--->
 <section class="post-form">
-    <h2>Blogbejegyzés írása</h2>
+    <h2>Blogbejegyzés szerkesztése(crud)</h2>
     <form method="post" action="{{url('crud/'.$post->id)}}" accept-charset="utf-8">
     @csrf <!-- {{ csrf_field() }} -->
     @method('PUT')
@@ -38,7 +21,7 @@
                 <td><span>Címke: </span></td>
                 <td><label for="tag">
                         <input type="text" name="tag">
-                    </label>{{!!$post->user!!}}</td>
+                    </label></td>
             </tr>
 
         </table>

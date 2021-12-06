@@ -65,10 +65,10 @@ class CrudPostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Product $product)
+    /*public function show(Product $product)
     {
         return view('products.show', compact('product'));
-    }
+    }*/
 
     /**
      * Show the form for editing the specified resource.
@@ -91,7 +91,7 @@ class CrudPostController extends Controller
      */
     public function update(Request $request, $post)
     {
-        $post->id = Auth::id();
+        $post->id = $request->input('id');
         $post->user = $request->input('user');
         $post->post = $request->input('post');
         $post->tag = $request->input('tag');
