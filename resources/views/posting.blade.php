@@ -12,7 +12,7 @@
 
 <section class="post-form">
     <h2>Blogbejegyzés írása</h2>
-    <form id="post-form" method="post" action="/posting" accept-charset="utf-8">
+    <form id="post-form" method="post" action="/posting" >
     @csrf
         <table>
             <tr>

@@ -20,8 +20,8 @@ Route::get('/', function () {
 });
 
 Route::get('allposts', [CrudPostController::class, 'index']);
-Route::get('posting', [PostingController::class, 'add']);
-Route::post('posting', [PostingController::class, 'store']);
+Route::get('posting', [CrudPostController::class, 'add']);
+Route::post('posting', [CrudPostController::class, 'store']);
 
 Route::resource('posts', 'CrudPostController');
 

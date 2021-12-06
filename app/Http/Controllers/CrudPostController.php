@@ -24,7 +24,7 @@ class CrudPostController extends Controller
      *
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
-    public function create() /*Ez itt jelenleg nincs route-olva, mert a PostingController van helyette*/
+    public function add() /*Ez itt jelenleg nincs route-olva, mert a PostingController van helyette*/
     {
         return view('posting');
     }
@@ -33,11 +33,30 @@ class CrudPostController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
-    public function store(Request $request)
-    {
-        //
+    public function store(Request $request){
+        request()->validate([
+            'user'=>'required|max:30|min:4',
+            'post'=>'required|max:400',
+            'tag'=>'required|max:20'
+        ]);
+
+        $query =
+            DB::table('posts')->insert([
+                'user'=>$request->input('user'),
+                'post'=>$request->input('post'),
+                'tag' =>$request->input('tag')
+            ]);
+
+        if($query){
+            return redirect()->back();
+        } else{
+            return redirect()->back()->with('fail', 'fail') ;
+        }
+
+        //dd('Sikeres bejegyzés!');
+        //return redirect()->back();
     }
 
     /**
