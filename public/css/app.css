@@ -1,0 +1,37 @@
+html{
+    background: rgba(190, 192, 255);
+}
+
+body{
+    max-width: 1600px;
+    margin: auto;
+    font-family: sans-serif;
+
+}
+img{
+    position: marker;
+}
+.menu{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    float: left;
+}
+
+.navbutton{
+    color: white;
+    font-size: 20px;
+    background-color: rgba(3, 3, 133, 0.7);
+    border: 1px solid black;
+    padding: 2px;
+    width: 350px;
+    text-align: center;
+}
+
+p{
+    line-height: 1.6;
+}
+
+
+
+

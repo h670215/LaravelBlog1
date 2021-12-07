@@ -130,7 +130,7 @@ class CrudPostController extends Controller
      */
     public function destroy($id)
     {
-        $post = Post::find($id);
+        $post = post::find($id);
         $post->delete();
 
         return redirect()->back()->with('success', 'Post deleted successfully');
