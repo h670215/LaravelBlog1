@@ -4,19 +4,6 @@
     <title>My first laravel blog</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-    <style>
-        body {background-color: powderblue;}
-        h1   {color: blue;}
-        p    {color: red;}
-    </style>
-    background-image: url('w3css.gif');
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
-
-
-
-
 </head>
 <header>
     <div class="menu">
@@ -29,7 +16,7 @@
 </header>
 
 <body class="welcome">
-<img src="{{asset('images/blog_welcome.jpg')}}" width="1400" height="50">
+<img src="{{asset('images/blog_welcome.jpg')}}" width="1400">
 </body>
 
 
