@@ -29,9 +29,9 @@ img{
 }
 
 .postview {
+    border-bottom-style: solid;
+    border-color: grey;
     border-width: 1px;
-    border-style: solid;
-    border-color: black;
 }
 p{
     line-height: 1.6;
