@@ -22,21 +22,23 @@
 
 
 @foreach($data as $post)
-    <table>
-        <tr>
-            <td>{{$post->id}}.</td>
-            <td>{{$post->user}}</td>
-        </tr>
-    </table>
-    <p>{{$post->post}}</p>
-    <h6>Címkék: {{$post->tag}}</h6>
-    <a href="{{url('crud/show')}}" class="button is-warning is-small">Megtekintés</a><br>
-    <a href="{{url('crud/'.$post->id.'/edit')}}" class="button is-primary is-small">Szerkesztés</a>
-    <form action="{{url('crud/'.$post->id)}}" method="post">
-        @csrf
-        @method('DELETE')
-        <button class="button is-danger is-small" type="submit">Törlés</button>
-    </form>
+    <div class="postview">
+        <table>
+            <tr>
+                <td>{{$post->id}}.</td>
+                <td>{{$post->user}}</td>
+            </tr>
+        </table>
+        <p>{{$post->post}}</p>
+        <h6>Címkék: {{$post->tag}}</h6>
+        <a href="{{url('crud/show')}}" class="button is-warning is-small">Megtekintés</a><br>
+        <a href="{{url('crud/'.$post->id.'/edit')}}" class="button is-primary is-small">Szerkesztés</a>
+        <form action="{{url('crud/'.$post->id)}}" method="post">
+            @csrf
+            @method('DELETE')
+            <button class="button is-danger is-small" type="submit">Törlés</button>
+        </form>
+    </div>
 @endforeach
 
 

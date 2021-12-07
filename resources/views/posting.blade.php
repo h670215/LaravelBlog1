@@ -24,27 +24,39 @@
 <br><br><br><br><br><br>
 <body>
 <section class="post-form">
-    <h2>Blogbejegyzés írása</h2>
-    <form id="post-form" method="post" action="/posting" >
-    @csrf
-        <table>
-            <tr>
-                <td><span>Név:</span></td>
-                <td><label>
-                        <input type="text" name="user">
-                    </label></td>
-                <td><span>Címke: </span></td>
-                <td><label>
-                        <input type="text" name="tag">
-                    </label></td>
-            </tr>
+    <p class="title is-3">Blogbejegyzés létrehozása</p>
 
-        </table>
-        <p class="long-input-title">Szöveg:</p>
-        <label>
+
+
+    <form method="post" action="/posting" >
+    @csrf
+        <div class="field">
+            <table>
+                <tr>
+                    <td><label class="label" >Név: </label></td>
+                    <div class="control">
+                        <td><input class="input is-link" type="text" name="user"></td>
+                    </div>
+
+                    <td><label class="label" >Címke: </label></td>
+                    <div class="control">
+                        <td><input class="input is-link" type="text" name="tag"></td>
+                    </div>
+                </tr>
+
+            </table>
+
+            <label class="label">Szöveg:</label>
             <textarea cols="70" rows="4" class="long-input" form="post-form" name="post"></textarea>
-        </label>
-        <input type="submit" value="Közzététel">
+            <table>
+                <tr>
+                    <div class="control">
+                    <td><input class="input is-link" type="submit" value="Közzététel"></td>
+                    </div>
+                </tr>
+
+            </table>
+        </div>
     </form>
 </section>
 </body>
