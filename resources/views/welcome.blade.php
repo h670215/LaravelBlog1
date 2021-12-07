@@ -20,5 +20,8 @@
 <body class="welcome">
 <img src="{{asset('images/blog_welcome.jpg')}}" width="1400">
 </body>
+<footer>
+<br><br><br><br>
+</footer>
 
 
