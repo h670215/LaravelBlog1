@@ -28,9 +28,8 @@
     </table>
     <p>{{$post->post}}</p>
     <h6>Címkék: {{$post->tag}}</h6>
-    <a href="{{url('crud/show')}}" class="button is-warning is-small">Megtekintés</a>
+    <a href="{{url('crud/show')}}" class="button is-warning is-small">Megtekintés</a><br>
     <a href="{{url('crud/'.$post->id.'/edit')}}" class="button is-primary is-small">Szerkesztés</a>
-    <!--<a href="{{url('crud/delete')}}" class="button">Törlés</a>-->
     <form action="{{url('crud/'.$post->id)}}" method="post">
         @csrf
         @method('DELETE')
